@@ -30,6 +30,5 @@ int main(int argc, char* argv[]){
     std::cout << s.pop() << std::endl;
     std::cout << s.pop() << std::endl;
 
-
     return 0;
 }

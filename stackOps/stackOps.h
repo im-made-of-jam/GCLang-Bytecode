@@ -13,6 +13,11 @@ void inv(Stack& s){
     s.push(_internal::noStack_invert(s.pop()));
 }
 
+// twos compliment
+void twos(Stack& s){
+    s.push(_internal::noStack_twosCompliment(s.pop()));
+}
+
 // take the value of the top element of the stack, and add another value on the top of the stack with the same value, without removing the old one
 void dup(Stack& s){
     // ok thats not true, we do remove the top element here
@@ -22,6 +27,7 @@ void dup(Stack& s){
     s.push(a);
     s.push(a);
 }
+
 
 // make a GCPointer
 // this is just a uint64_t[] but the first element is the length of the array including itself so that length information is self-contained

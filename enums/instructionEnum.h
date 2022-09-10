@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-class Instructions{
+class Enum{
 
 // in bytecode representation these all need to be shifted left by two bits
 enum AllInstrs{
@@ -30,8 +30,19 @@ enum AllInstrs{
     ptrDeref,
 };
 
-uint64_t format(uint64_t instruction){
+enum AllStacks{
+    Main,
+    Second,
+    Third,
+    Fourth
+};
+
+inline uint64_t formatInstruction(uint64_t instruction){
     return instruction << 2;
+}
+
+inline uint64_t combineInstruction(uint64_t formattedInstruction, uint64_t stack){
+    return formattedInstruction | stack;
 }
 
 };
