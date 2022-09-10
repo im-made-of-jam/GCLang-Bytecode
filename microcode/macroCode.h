@@ -6,10 +6,10 @@
 
 namespace _internal{
 
-#include "microcode/add.h"
-#include "microcode/inv.h"
-#include "microcode/mul.h"
-#include "microcode/div.h"
+#include "add.h"
+#include "inv.h"
+#include "mul.h"
+#include "div.h"
 
 #include "stack/stack.h"
 
