@@ -32,7 +32,13 @@ void makePtr(Stack& s){
 }
 
 void derefPtr(Stack& s){
+    uint64_t* ptr = reinterpret_cast<uint64_t*>(s.pop());
 
+    for(uint64_t i = 0; i < ptr[0]; ++i){
+        s.push(ptr[i + 1]);
+    }
+
+    delete ptr;
 }
 
 }; // namespace SOp
