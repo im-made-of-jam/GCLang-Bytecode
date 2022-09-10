@@ -28,6 +28,33 @@ void dup(Stack& s){
     s.push(a);
 }
 
+// removes the top two elements of the stack. if they are equal, pushes 1, else pushes 0
+void equ(Stack& s){
+    if(s.pop() == s.pop()){
+        s.push(1);
+    }
+    else{
+        s.push(0);
+    }
+}
+
+// removes the top element of the stack and discards its value
+void drop(Stack& s){
+    [[maybe_unused]]
+    uint64_t unused = s.pop();
+}
+
+// takes the top two elements of the stack, and reverses their order
+void swap(Stack& s){
+    uint64_t a, b;
+
+    a = s.pop();
+    b = s.pop();
+
+    s.push(a);
+    s.push(b);
+}
+
 
 // make a GCPointer
 // this is just a uint64_t[] but the first element is the length of the array including itself so that length information is self-contained

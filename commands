@@ -12,6 +12,7 @@ git commit -m "*message*"
 
 git push:
 git push --set-upstream origin main -f
+   yes the -f is probably bad practice but it makes it work so ¯\_(ᓀᓀ)_/¯
 
 git pull:
 git pull https://github.com/im-made-of-jam/GCLang-Bytecode.git

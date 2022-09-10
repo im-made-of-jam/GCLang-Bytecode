@@ -13,18 +13,28 @@ enum AllInstrs{
     mul,
     div,
     mod,
-    equals,
+
     invert,
+    equals,
 
-    ifBegin,
-    ifElse,
-    ifEnd,
+    dup,
+    drop,
+    swap,
 
-    loopBegin,
-    loopEnd,
+    move,//
 
-    fnCall,
-    fnReturn,
+    ifBegin,//
+    ifElse,//
+    ifEnd,//
+
+    loopBegin,//
+    loopEnd,//
+    loopBreak,//
+
+    fnCall,//
+    fnReturn,//
+
+    external,//
 
     ptrMake,
     ptrDeref,
