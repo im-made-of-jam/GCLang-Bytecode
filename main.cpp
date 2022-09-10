@@ -1,12 +1,3 @@
-// g++ ./main.cpp -o ./main.exe -I . -std=gnu++20 -Wall
-
-// "g++"           - compiler
-// "./main.cpp"    - this file
-// "-o ./main.exe" - output file
-// "-I ."          - include path includes base directory so relative includes are not needed
-// "-std=gnu++20"  - modern standard so std::filesystem works
-// "-Wall"         - report all warnings
-
 #include <iostream>
 
 #include "enums/instructionEnum.h"
