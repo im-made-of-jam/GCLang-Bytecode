@@ -13,7 +13,7 @@ struct ExecState{
     Stack callStack;
     Stack loopStack;
 
-    Stack allStacks[4] = {MainStack, Second, Third, Fourth};
+    Stack* allStacks[4] = {&MainStack, &Second, &Third, &Fourth};
 
     // If the top of the stack is truthy, execution will fall through.
     // If the top of the stack is falsey, execution will jump to the address within additional.

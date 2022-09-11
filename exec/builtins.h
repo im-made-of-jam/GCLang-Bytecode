@@ -20,20 +20,29 @@ namespace Exec{
 namespace Builtins{
 
 void exit(Stack& s){
-    exit(s.pop());
+    ::exit(s.pop());
 }
 
 void puti(Stack& s){
-    std::cout << stack.pop();
+    std::cout << s.pop();
 }
 
 void putc(Stack& s){
-    std::cout << reinterpret_cast<char> (stack.pop() && 0xFF);
+    std::cout << static_cast<char> (s.pop() & 0xFF);
 }
 
 void getc(Stack& s){
     s.push(getch());
 }
+
+#warning TODO impl. output stream switching
+void setStdOut(Stack& s){}
+
+void setGCOut(Stack& s){}
+
+void flushOut(Stack& s){}
+
+
 
 }; // namespace Builtins
 }; // namespace Exec

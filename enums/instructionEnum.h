@@ -22,6 +22,9 @@ enum AllInstrs{
 
     move,//
 
+    size,//
+    active,//
+
     ifBegin,/////
     ifEnd,/////
 

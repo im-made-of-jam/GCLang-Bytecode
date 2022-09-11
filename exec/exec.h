@@ -7,12 +7,13 @@
 
 #include "enums/instructionEnum.h"
 
+#include "builtins.h"
 #include "execState.h"
 
 namespace Exec{
 
 bool single(uint64_t instruction, ExecState& state, uint64_t additional = 0, uint64_t additional2 = 0){
-    Stack& stack = state.allStacks[state.activeStack];
+    Stack& stack = *state.allStacks[state.activeStack];
 
     switch(instruction){
         case Enum::push:{
@@ -112,6 +113,15 @@ bool single(uint64_t instruction, ExecState& state, uint64_t additional = 0, uin
         }
         case Enum::ptrDeref:{
             SOp::derefPtr(stack);
+            break;
+        }
+
+        case Enum::size:{
+            SOp::size(stack);
+            break;
+        }
+        case Enum::active:{
+            SOp::active(state);
             break;
         }
 

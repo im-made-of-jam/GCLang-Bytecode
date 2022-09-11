@@ -6,6 +6,8 @@
 
 #include "stackOps/arithmetic.h"
 
+#include "exec/execState.h"
+
 namespace SOp{
 
 // ones compliment
@@ -58,6 +60,11 @@ void swap(Stack& s){
 // takes the number of elements on the current stack then pushes that number to the stack
 void size(Stack& s){
     s.push(s.pointer - 1);
+}
+
+// pushes the index of the currently active stack to the active stack
+void active(ExecState& state){
+    state.allStacks[state.activeStack]->push(state.activeStack);
 }
 
 
