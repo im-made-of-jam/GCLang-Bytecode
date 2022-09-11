@@ -1,4 +1,4 @@
-an instruction is 4 bytes long
+an instruction is 4 bytes long and shall be both written to the executable and read from the executable in little-endian format
 
 the first byte of an instruction encodes the length of said instruction, including additional information such as a memory address
     this byte is unsigned, and as such, an instruction may have a maximum length of 255 bytes

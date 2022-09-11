@@ -145,7 +145,6 @@ uint32_t multiple(std::vector<uint32_t>& instructionDataMix){
 
 int32_t getInstrSize(uint32_t instruction){
     // take top byte of the instruction, then shift it three bytes to the right to get the topmost byte
-
     return (instruction & 0xFF000000) >> 24;
 }
 
