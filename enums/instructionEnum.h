@@ -6,7 +6,7 @@ class Enum{
 public:
 // in bytecode representation these all need to be shifted left by two bits
 enum AllInstrs{
-    add,/////
+    add = 0,/////
     sub,/////
     mul,/////
     div,/////
@@ -40,6 +40,8 @@ enum AllInstrs{
 
     ptrMake,/////
     ptrDeref,/////
+
+    _dbg_cout_size,/////
 };
 
 enum AllStacks{
