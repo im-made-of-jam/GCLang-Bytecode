@@ -3,41 +3,40 @@
 #include <cstdint>
 
 class Enum{
-
+public:
 // in bytecode representation these all need to be shifted left by two bits
 enum AllInstrs{
-    push,
-    pop,
-    add,
-    sub,
-    mul,
-    div,
-    mod,
+    add,/////
+    sub,/////
+    mul,/////
+    div,/////
+    mod,/////
 
-    invert,
-    equals,
+    invert,/////
+    equals,/////
 
-    dup,
-    drop,
-    swap,
+    push,/////
+    dup,/////
+    drop,/////
+    swap,/////
 
     move,//
 
-    ifBegin,//
-    ifElse,//
-    ifEnd,//
+    ifBegin,/////
+    ifEnd,/////
 
-    loopBegin,//
-    loopEnd,//
-    loopBreak,//
+    loopBegin,/////
+    loopEnd,/////
+    loopBreak,/////
 
-    fnCall,//
-    fnReturn,//
+    fnCall,/////
+    fnReturn,/////
 
-    external,//
+    external,/////
+    builtin,/////
 
-    ptrMake,
-    ptrDeref,
+    ptrMake,/////
+    ptrDeref,/////
 };
 
 enum AllStacks{

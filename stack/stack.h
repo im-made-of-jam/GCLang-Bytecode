@@ -15,17 +15,22 @@ class Stack{
     // number of blocks in memory assigned to this object
     uint64_t blocksAssigned = 0;
 
+    // the number of blocks we can have
+    uint64_t maxBlocks;
+
     // array of blocks
     // there is a tradeoff here betweem the number of blocks we have and the size of this array that keeps track of them
     // the larger this array is, the more blocks we can have, but also the longer this array becomes
     StackBlock** blocks = new StackBlock*[STACKBLOCK_NUMBER];
 
+  public:
     // the pointer always points to the first empty value of the stack.
     uint64_t pointer = 0;
 
-  public:
-    Stack(){
-        for(uint64_t i = 0; i < STACKBLOCK_NUMBER; ++i){
+    Stack(uint64_t numBlocks = STACKBLOCK_NUMBER){
+        maxBlocks = numBlocks;
+
+        for(uint64_t i = 0; i < maxBlocks; ++i){
             blocks[i] = nullptr;
         }
     }
@@ -38,7 +43,7 @@ class Stack{
 
         // if we dont have enough blocks assigned, then add another block to our pool of blocks
         if(blockN > blocksAssigned){
-            if(blockN >= STACKBLOCK_NUMBER){
+            if(blockN >= maxBlocks){
                 std::cout << "no more stack blocks to allocate\n";
                 throw new SlotException();
             }

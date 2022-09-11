@@ -6,29 +6,16 @@
 
 #include "stackOps/stackOps.h"
 
+#include "exec/exec.h"
+
 int main(int argc, char* argv[]){
-    Stack s;
+    ExecState p;
 
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    s.push(4);
-    s.push(5);
-    s.push(5);
+    Exec::single(Enum::push, p, 5);
+    Exec::single(Enum::push, p, 5);
+    Exec::single(Enum::add, p);
 
-    SOp::makePtr(s);
-
-    SOp::dup(s);
-
-    std::cout << std::hex << s.pop() << std::endl;
-
-    SOp::derefPtr(s);
-
-    std::cout << s.pop() << std::endl;
-    std::cout << s.pop() << std::endl;
-    std::cout << s.pop() << std::endl;
-    std::cout << s.pop() << std::endl;
-    std::cout << s.pop() << std::endl;
+    Exec::single(Enum::builtin, p, 1);
 
     return 0;
 }

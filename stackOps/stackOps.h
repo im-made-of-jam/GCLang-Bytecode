@@ -55,6 +55,11 @@ void swap(Stack& s){
     s.push(b);
 }
 
+// takes the number of elements on the current stack then pushes that number to the stack
+void size(Stack& s){
+    s.push(s.pointer - 1);
+}
+
 
 // make a GCPointer
 // this is just a uint64_t[] but the first element is the length of the array including itself so that length information is self-contained
