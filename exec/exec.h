@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <vector>
 
 #include "stack/stack.h"
 #include "stackOps/stackOps.h"
@@ -12,7 +13,7 @@
 
 namespace Exec{
 
-bool single(uint64_t instruction, ExecState& state, uint64_t additional = 0, uint64_t additional2 = 0){
+bool single(uint32_t instruction, ExecState& state, uint64_t additional = 0, uint64_t additional2 = 0){
     Stack& stack = *state.allStacks[state.activeStack];
 
     switch(instruction){
@@ -136,6 +137,16 @@ bool single(uint64_t instruction, ExecState& state, uint64_t additional = 0, uin
     }
 
     return true;
+}
+
+uint32_t multiple(std::vector<uint32_t>& instructionDataMix){
+    ;
+}
+
+int32_t getInstrSize(uint32_t instruction){
+    // take top byte of the instruction, then shift it three bytes to the right to get the topmost byte
+
+    return (instruction & 0xFF000000) >> 24;
 }
 
 }; // namespace Exec

@@ -17,7 +17,5 @@ int main(int argc, char* argv[]){
 
     Exec::single(Enum::builtin, p, 1);
 
-    std::cout << "no segfault!\n";
-
     return 0;
 }

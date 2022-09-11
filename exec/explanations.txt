@@ -1,3 +1,14 @@
+an instruction is 4 bytes long
+
+the first byte of an instruction encodes the length of said instruction, including additional information such as a memory address
+    this byte is unsigned, and as such, an instruction may have a maximum length of 255 bytes
+    should this value be equal to 0, the instruction shall be treated as if it were a no-op
+the second and third bytes of the instruction encode the type of the instruction
+the fourth byte of the instruction encodes additional information
+    the first 6 bits of this byte are used for anything relevant, while the last two bits are used for encoding an active stack should the instruction need it
+
+
+
 an if else statement is essentially
 """
     if (!stack.pop()){ goto ifElse }     // this is the ifBegin instruction
