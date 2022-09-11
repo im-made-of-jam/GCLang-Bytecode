@@ -125,6 +125,11 @@ bool single(uint64_t instruction, ExecState& state, uint64_t additional = 0, uin
             break;
         }
 
+        case Enum::builtin:{
+            return(Exec::Builtins::execFromIndex(additional, state));
+            break;
+        }
+
         default:{
             return false;
         }

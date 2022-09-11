@@ -31,6 +31,10 @@ void putc(Stack& s){
     std::cout << static_cast<char> (s.pop() & 0xFF);
 }
 
+void sleep(Stack& s){
+    return; // do nothing, deprecate this
+}
+
 void getc(Stack& s){
     s.push(getch());
 }
@@ -43,6 +47,41 @@ void setGCOut(Stack& s){}
 void flushOut(Stack& s){}
 
 
+
+bool execFromIndex(uint64_t index, ExecState& state){
+    switch(index){
+        case 0:{
+            Builtins::exit(*state.allStacks[state.activeStack]);
+            break;
+        }
+        case 1:{
+            Builtins::puti(*state.allStacks[state.activeStack]);
+            break;
+        }
+        case 2:{
+            Builtins::putc(*state.allStacks[state.activeStack]);
+            break;
+        }
+        case 3:{
+            Builtins::getc(*state.allStacks[state.activeStack]);
+            break;
+        }
+        case 5:{
+            SOp::size(*state.allStacks[state.activeStack]);
+            break;
+        }
+        case 9:{
+            SOp::active(state);
+            break;
+        }
+
+        default:{
+            return false;
+        }
+    }
+
+    return true;
+}
 
 }; // namespace Builtins
 }; // namespace Exec
