@@ -8,42 +8,42 @@ class Enum{
 public:
 // in bytecode representation these all need to be shifted left by two bits
 enum AllInstrs{
-    add = 0,/////
-    sub,/////
-    mul,/////
-    div,/////
-    mod,/////
+        add = 0,
+    sub = 1,
+    mul = 2,
+    div = 3,
+    mod = 4,
 
-    invert,/////
-    equals,/////
+    invert = 5,
+    equals = 6,
 
-    push,/////
-    dup,/////
-    drop,/////
-    swap,/////
+    push = 7,
+    dup = 8,
+    drop = 9,
+    swap = 10,
 
-    move,//
+    move = 11, //
 
-    size,//
-    active,//
+    size = 12, //
+    active = 13, //
 
-    ifBegin,/////
-    ifEnd,/////
+    ifBegin = 14,
+    ifEnd = 15,
 
-    loopBegin,/////
-    loopEnd,/////
-    loopBreak,/////
+    loopBegin = 16,
+    loopEnd = 17,
+    loopBreak = 18,
 
-    fnCall,/////
-    fnReturn,/////
+    fnCall = 19,
+    fnReturn = 20,
 
-    external,/////
-    builtin,/////
+    external = 21,
+    builtin = 22,
 
-    ptrMake,/////
-    ptrDeref,/////
+    ptrMake = 23,
+    ptrDeref = 24,
 
-    _dbg_cout_size,/////
+    _dbg_cout_size = 32769,
 };
 
 enum AllStacks{
