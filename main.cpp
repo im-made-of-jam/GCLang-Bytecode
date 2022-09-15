@@ -1,3 +1,6 @@
+// this isnt the first bytecode interpreter i have written, but it is the first one written to fulfill a purpose,
+//   the other one being written to execute a basic, not very useful asm language that was written specifically for it to run
+
 #include <iostream>
 
 #include "enums/instructionEnum.h"

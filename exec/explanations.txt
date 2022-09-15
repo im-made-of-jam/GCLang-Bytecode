@@ -1,7 +1,9 @@
+a word is simply 4 bytes
+
 an instruction is 4 bytes long and shall be both written to the executable and read from the executable in little-endian format
 
 the first byte of an instruction encodes the length of said instruction, including additional information such as a memory address
-    this byte is unsigned, and as such, an instruction may have a maximum length of 255 bytes
+    this byte is unsigned, and as such, an instruction may have a maximum length of 255 words
     should this value be equal to 0, the instruction shall be treated as if it were a no-op
 the second and third bytes of the instruction encode the type of the instruction
 the fourth byte of the instruction encodes additional information

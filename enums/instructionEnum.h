@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+//! DO NOT CHANGE THIS AS OTHER FILES IN OTHER PROJECTS MAY RELY UPON THIS ORDERING
+
 class Enum{
 public:
 // in bytecode representation these all need to be shifted left by two bits
