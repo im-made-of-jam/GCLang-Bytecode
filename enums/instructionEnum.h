@@ -2,8 +2,6 @@
 
 #include <cstdint>
 
-//! DO NOT CHANGE THIS AS OTHER FILES IN OTHER PROJECTS MAY RELY UPON THIS ORDERING
-
 class Enum{
 public:
 // in bytecode representation these all need to be shifted left by two bits
@@ -47,10 +45,10 @@ enum AllInstrs{
 };
 
 enum AllStacks{
-    Main,
-    Second,
-    Third,
-    Fourth
+    Main = 0,
+    Second = 1,
+    Third = 2,
+    Fourth = 3,
 };
 
 inline uint64_t formatInstruction(uint64_t instruction){
