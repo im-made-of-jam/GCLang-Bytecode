@@ -6,6 +6,7 @@ the first byte of an instruction encodes the length of said instruction, includi
     this byte is unsigned, and as such, an instruction may have a maximum length of 255 words
     should this value be equal to 0, the instruction shall be treated as if it were a no-op
 the second and third bytes of the instruction encode the type of the instruction
+    the most significant bit is reserved for instructions used fo rthe putpose of debugging, and as such this limits user-mode instructions to 2**15
 the fourth byte of the instruction encodes additional information
     the first 6 bits of this byte are used for anything relevant, while the last two bits are used for encoding a stack number should the instruction need it
 
