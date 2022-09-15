@@ -6,7 +6,7 @@ class Enum{
 public:
 // in bytecode representation these all need to be shifted left by two bits
 enum AllInstrs{
-        add = 0,
+    add = 0,
     sub = 1,
     mul = 2,
     div = 3,
@@ -41,6 +41,9 @@ enum AllInstrs{
     ptrMake = 23,
     ptrDeref = 24,
 
+    noOp = 32767,
+
+    // beginning of debug
     _dbg_cout_size = 32769,
 };
 
